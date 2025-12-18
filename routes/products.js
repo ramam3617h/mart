@@ -9,7 +9,7 @@ const router = express.Router();
 
 // Get all products
 router.get('/', authenticate, async (req, res) => {
-  const { category, search, page = 1, limit = 50 } = req.query;
+  const { category, search, page = 1, limit = 70 } = req.query;
   const offset = (parseInt(page) - 1) * parseInt(limit);
 
   try {
