@@ -73,11 +73,11 @@ class EmailService {
       <body>
         <div class="container">
           <div class="header">
-            <h1>🎉 Welcome to FreshMart!</h1>
+            <h1>🎉 Welcome to market.vrksatechnology.com!</h1>
           </div>
           <div class="content">
             <h2>Hi ${user.name},</h2>
-            <p>Thank you for joining FreshMart! We're excited to have you on board.</p>
+            <p>Thank you for joining market.vrksatechnology.com! We're excited to have you on board.</p>
             <p>Your account has been successfully created. You can now:</p>
             <ul>
               <li>Browse our fresh products</li>
@@ -91,7 +91,7 @@ class EmailService {
             <p>Happy Shopping!</p>
           </div>
           <div class="footer">
-            <p>© 2024 FreshMart. All rights reserved.</p>
+            <p>© 2024 market.vrksatechnology.com. All rights reserved.</p>
             <p>This email was sent to ${user.email}</p>
           </div>
         </div>
@@ -101,7 +101,7 @@ class EmailService {
 
     return await this.sendEmail(
       user.email,
-      'Welcome to FreshMart! 🎉',
+      'Welcome to market.vrksatechnology.com! 🎉',
       html
     );
   }
@@ -164,7 +164,7 @@ class EmailService {
             <a href="${process.env.FRONTEND_URL}/orders/${order.id}" class="button">Track Order</a>
           </div>
           <div class="footer">
-            <p>© 2024 FreshMart. All rights reserved.</p>
+            <p>© 2024 market.vrksatechnology.com. All rights reserved.</p>
           </div>
         </div>
       </body>
@@ -218,7 +218,7 @@ class EmailService {
               <p><strong>Order Number:</strong> ${order.order_number}</p>
               <p><strong>Status:</strong> ${newStatus.toUpperCase()}</p>
             </div>
-            ${newStatus === 'delivered' ? '<p>We hope you enjoy your purchase! Thank you for shopping with FreshMart.</p>' : ''}
+            ${newStatus === 'delivered' ? '<p>We hope you enjoy your purchase! Thank you for shopping with market.vrksatechnology.com.</p>' : ''}
             ${newStatus === 'in-transit' ? `<p>Your delivery agent will contact you shortly at ${user.phone}.</p>` : ''}
             <a href="${process.env.FRONTEND_URL}/orders/${order.id}" class="button">View Order Details</a>
           </div>
@@ -257,7 +257,7 @@ class EmailService {
           </div>
           <div class="content">
             <h2>Hi ${user.name},</h2>
-            <p>We received a request to reset your password for your FreshMart account.</p>
+            <p>We received a request to reset your password for your market.vrksatechnology.com account.</p>
             <p>Click the button below to reset your password:</p>
             <a href="${resetUrl}" class="button">Reset Password</a>
             <p>Or copy this link: ${resetUrl}</p>
@@ -277,7 +277,7 @@ class EmailService {
 
     return await this.sendEmail(
       user.email,
-      'Password Reset Request - FreshMart',
+      'Password Reset Request - market.vrksatechnology.com',
       html
     );
   }

@@ -52,7 +52,7 @@ class SMSService {
   }
 
   async sendOrderConfirmation(order, user) {
-    const message = `Hi ${user.name},\n\nYour order ${order.order_number} has been confirmed! Total: ₹${order.total_amount}.\n\nTrack: ${process.env.FRONTEND_URL}/orders/${order.id}\n\n- FreshMart`;
+    const message = `Hi ${user.name},\n\nYour order ${order.order_number} has been confirmed! Total: ₹${order.total_amount}.\n\nTrack: ${process.env.FRONTEND_URL}/orders/${order.id}\n\n- market.vrksatechnology.com`;
     
     return await this.sendSMS(user.phone, message);
   }
@@ -65,19 +65,19 @@ class SMSService {
       'cancelled': 'has been cancelled'
     };
 
-    const message = `Hi ${user.name},\n\nYour order ${order.order_number} ${statusMessages[newStatus]}.\n\n- FreshMart`;
+    const message = `Hi ${user.name},\n\nYour order ${order.order_number} ${statusMessages[newStatus]}.\n\n- market.vrksatechnology.com`;
     
     return await this.sendSMS(user.phone, message);
   }
 
   async sendDeliveryOTP(order, user, otp) {
-    const message = `Your FreshMart delivery OTP is: ${otp}\n\nOrder: ${order.order_number}\nPlease share this with delivery agent.\n\n- FreshMart`;
+    const message = `Your market.vrksatechnology.com delivery OTP is: ${otp}\n\nOrder: ${order.order_number}\nPlease share this with delivery agent.\n\n- market.vrksatechnology.com`;
     
     return await this.sendSMS(user.phone, message);
   }
 
   async sendWelcomeSMS(user) {
-    const message = `Welcome to FreshMart, ${user.name}! 🎉\n\nStart shopping fresh groceries now: ${process.env.FRONTEND_URL}\n\n- FreshMart`;
+    const message = `Welcome to market.vrksatechnology.com, ${user.name}! 🎉\n\nStart shopping fresh groceries now: ${process.env.FRONTEND_URL}\n\n- market.vrksatechnology.com`;
     
     return await this.sendSMS(user.phone, message);
   }

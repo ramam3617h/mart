@@ -79,7 +79,7 @@ ${order.delivery_address}
 
 Track your order: ${process.env.FRONTEND_URL}/orders/${order.id}
 
-Thank you for shopping with FreshMart! 🛒`;
+Thank you for shopping with market.vrksatechnology.com! 🛒`;
 
     return await this.sendWhatsAppMessage(user.phone, message);
   }
@@ -108,7 +108,7 @@ ${statusMessages[newStatus]}
 Order #: ${order.order_number}
 Status: *${newStatus.toUpperCase()}*
 
-${newStatus === 'delivered' ? 'Thank you for shopping with FreshMart! 🎉' : ''}
+${newStatus === 'delivered' ? 'Thank you for shopping with market.vrksatechnology.com! 🎉' : ''}
 ${newStatus === 'in-transit' ? 'Your delivery agent will contact you shortly.' : ''}
 
 View details: ${process.env.FRONTEND_URL}/orders/${order.id}`;
@@ -117,7 +117,7 @@ View details: ${process.env.FRONTEND_URL}/orders/${order.id}`;
   }
 
   async sendWelcomeMessage(user) {
-    const message = `🎉 *Welcome to FreshMart!*
+    const message = `🎉 *Welcome to market.vrksatechnology.com!*
 
 Hi ${user.name},
 
