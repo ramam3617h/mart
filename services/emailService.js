@@ -107,8 +107,9 @@ class EmailService {
   }
 
   async sendOrderConfirmation(order, user) {
+      let sl=1;
     const itemsList = order.items.map(item => 
-      `<li>${item.product_name} x ${item.quantity} - ₹${item.subtotal}</li>`
+      `<li>${sl++} . ${item.product_name} x ${item.quantity} - ₹${item.subtotal}</li>`
     ).join('');
 
     const html = `
