@@ -40,10 +40,11 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
-
+const allowedOrigins = ['https://market.vrksatechnology.com','https://eshushop.com','https://www.eshushop.com','localhost:3000'];
 // CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || process.env.FRONTEND_URL_SHOP || '*',
+//  origin: process.env.FRONTEND_URL, process.env.FRONTEND_URL_SHOP || '*',
+    orgin: allowedOrigins || '*',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
